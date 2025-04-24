@@ -15,57 +15,54 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
-        <div class="user-info">
-            <div class="user-avatar">JD</div>
-            <div class="user-details">
-            <h5>John Doe</h5>
-            <p>Art Enthusiast</p>
+            <div class="user-info">
+                <div class="user-avatar">JD</div>
+                <div class="user-details">
+                    <h5>John Doe</h5>
+                    <p>Art Enthusiast</p>
+                </div>
             </div>
         </div>
-        </div>
         <ul class="nav nav-sidebar flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" href="#dashboard" data-bs-toggle="tab">
-            <i class="fas fa-tachometer-alt"></i> Dashboard
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#profile" data-bs-toggle="tab">
-            <i class="fas fa-user"></i> My Profile
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#cart" data-bs-toggle="tab">
-            <i class="fas fa-shopping-cart"></i> Shopping Cart
-            <span class="badge bg-primary rounded-pill ms-auto">2</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#orders" data-bs-toggle="tab">
-            <i class="fas fa-history"></i> Order History
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#bookmarks" data-bs-toggle="tab">
-            <i class="fas fa-heart"></i> Bookmarks
-            <span class="badge bg-secondary rounded-pill ms-auto">5</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#commissions" data-bs-toggle="tab">
-            <i class="fas fa-paint-brush"></i> My Commissions
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#settings" data-bs-toggle="tab">
-            <i class="fas fa-cog"></i> Settings
-            </a>
-        </li>
-        <li class="nav-item mt-5">
-            <a class="nav-link text-danger" href="login.html">
-            <i class="fas fa-sign-out-alt"></i> Logout
-            </a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#dashboard" data-bs-toggle="tab">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#profile" data-bs-toggle="tab">
+                <i class="fas fa-user"></i> My Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#cart" data-bs-toggle="tab">
+                <i class="fas fa-shopping-cart"></i> Shopping Cart
+                <span class="badge bg-primary rounded-pill ms-auto">2</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#orders" data-bs-toggle="tab">
+                <i class="fas fa-history"></i> Order History
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#bookmarks" data-bs-toggle="tab">
+                <i class="fas fa-heart"></i> Bookmarks
+                <span class="badge bg-secondary rounded-pill ms-auto">5</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#commissions" data-bs-toggle="tab">
+                <i class="fas fa-paint-brush"></i> My Commissions
+                </a>
+            </li>
+
+            <li class="nav-item mt-5">
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn nav-link text-danger w-100"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </form>
+            </li>
         </ul>
     </aside>
 
@@ -1019,335 +1016,7 @@
             </div>
             </div>
         </div>
-        <!-- Settings Tab -->
-        <div class="tab-pane fade" id="settings">
-            <div class="dashboard-header">
-            <h2>Settings</h2>
-            </div>
 
-            <div class="card mb-4">
-            <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a
-                    class="nav-link1 active"
-                    href="#account-settings"
-                    data-bs-toggle="tab"
-                    >Account</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a
-                    class="nav-link1"
-                    href="#display-settings"
-                    data-bs-toggle="tab"
-                    >Display</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a
-                    class="nav-link1"
-                    href="#notification-settings"
-                    data-bs-toggle="tab"
-                    >Notifications</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a
-                    class="nav-link1"
-                    href="#privacy-settings"
-                    data-bs-toggle="tab"
-                    >Privacy</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a
-                    class="nav-link1"
-                    href="#security-settings"
-                    data-bs-toggle="tab"
-                    >Security</a
-                    >
-                </li>
-                </ul>
-            </div>
-
-            <div class="card-body">
-                <div class="tab-content">
-                <!-- Account Settings -->
-                <div class="tab-pane fade show active" id="account-settings">
-                    <div class="alert alert-success" role="alert">
-                    Your settings have been saved successfully.
-                    </div>
-
-                    <h5 class="mb-3">Account Information</h5>
-                    <form>
-                    <div class="mb-3">
-                        <label for="fullName" class="form-label"
-                        >Full Name</label
-                        >
-                        <input
-                        type="text"
-                        class="form-control"
-                        id="fullName"
-                        value="John Doe"
-                        />
-                    </div>
-                    <div class="mb-3">
-                        <label for="settingsEmail" class="form-label"
-                        >Email Address</label
-                        >
-                        <input
-                        type="email"
-                        class="form-control"
-                        id="settingsEmail"
-                        value="john.doe@example.com"
-                        />
-                    </div>
-                    <div class="mb-3">
-                        <label for="settingsPhone" class="form-label"
-                        >Phone Number</label
-                        >
-                        <input
-                        type="tel"
-                        class="form-control"
-                        id="settingsPhone"
-                        value="(555) 123-4567"
-                        />
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        Save Changes
-                    </button>
-                    </form>
-                </div>
-
-                <!-- Display Settings -->
-                <div class="tab-pane fade" id="display-settings">
-                    <h5 class="mb-3">Display Preferences</h5>
-                    <form>
-                    <div class="mb-3">
-                        <label class="form-label">Theme</label>
-                        <div class="d-flex gap-3">
-                        <div class="form-check">
-                            <input
-                            class="form-check-input"
-                            type="radio"
-                            name="theme"
-                            id="lightTheme"
-                            />
-                            <label class="form-check-label" for="lightTheme">
-                            Light
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input
-                            class="form-check-input"
-                            type="radio"
-                            name="theme"
-                            id="darkTheme"
-                            checked
-                            />
-                            <label class="form-check-label" for="darkTheme">
-                            Dark
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input
-                            class="form-check-input"
-                            type="radio"
-                            name="theme"
-                            id="sepiaTheme"
-                            />
-                            <label class="form-check-label" for="sepiaTheme">
-                            Sepia
-                            </label>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="textSizeSelect" class="form-label"
-                        >Text Size</label
-                        >
-                        <select class="form-select" id="textSizeSelect">
-                        <option>Small</option>
-                        <option selected>Medium</option>
-                        <option>Large</option>
-                        <option>Extra Large</option>
-                        </select>
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="highContrastMode"
-                        />
-                        <label class="form-check-label" for="highContrastMode"
-                        >Enable High-Contrast Mode</label
-                        >
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="reduceMotion"
-                        checked
-                        />
-                        <label class="form-check-label" for="reduceMotion"
-                        >Reduce Motion</label
-                        >
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        Save Changes
-                    </button>
-                    </form>
-                </div>
-
-                <!-- Notification Settings -->
-                <div class="tab-pane fade" id="notification-settings">
-                    <h5 class="mb-3">Notification Preferences</h5>
-                    <form>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="newExhibitions"
-                        checked
-                        />
-                        <label class="form-check-label" for="newExhibitions"
-                        >Email Notifications for New Exhibitions</label
-                        >
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="featuredArtists"
-                        checked
-                        />
-                        <label class="form-check-label" for="featuredArtists"
-                        >Email Notifications for Featured Artists</label
-                        >
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="weeklyNewsletter"
-                        />
-                        <label class="form-check-label" for="weeklyNewsletter"
-                        >Weekly Newsletter</label
-                        >
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="eventReminders"
-                        checked
-                        />
-                        <label class="form-check-label" for="eventReminders"
-                        >Event Reminders</label
-                        >
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        Save Changes
-                    </button>
-                    </form>
-                </div>
-
-                <!-- Privacy Settings -->
-                <div class="tab-pane fade" id="privacy-settings">
-                    <h5 class="mb-3">Privacy Preferences</h5>
-                    <form>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="profileVisibility"
-                        checked
-                        />
-                        <label class="form-check-label" for="profileVisibility"
-                        >Make profile visible to other users</label
-                        >
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="shareActivity"
-                        />
-                        <label class="form-check-label" for="shareActivity"
-                        >Share my activity with followers</label
-                        >
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="showPurchases"
-                        />
-                        <label class="form-check-label" for="showPurchases"
-                        >Show my purchases in my profile</label
-                        >
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        Save Changes
-                    </button>
-                    </form>
-                </div>
-
-                <!-- Security Settings -->
-                <div class="tab-pane fade" id="security-settings">
-                    <h5 class="mb-3">Security Settings</h5>
-                    <form>
-                    <div class="mb-3">
-                        <label for="currentPassword" class="form-label"
-                        >Current Password</label
-                        >
-                        <input
-                        type="password"
-                        class="form-control"
-                        id="currentPassword"
-                        />
-                    </div>
-                    <div class="mb-3">
-                        <label for="newPassword" class="form-label"
-                        >New Password</label
-                        >
-                        <input
-                        type="password"
-                        class="form-control"
-                        id="newPassword"
-                        />
-                    </div>
-                    <div class="mb-3">
-                        <label for="confirmPassword" class="form-label"
-                        >Confirm New Password</label
-                        >
-                        <input
-                        type="password"
-                        class="form-control"
-                        id="confirmPassword"
-                        />
-                    </div>
-                    <div class="mb-3 form-check form-switch">
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="twoFactorAuth"
-                        />
-                        <label class="form-check-label" for="twoFactorAuth"
-                        >Enable Two-Factor Authentication</label
-                        >
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        Update Password
-                    </button>
-                    </form>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
 
         <!-- Other tabs (Commissions, Settings) would go here -->
         </div>

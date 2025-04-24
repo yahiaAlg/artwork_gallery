@@ -42,3 +42,39 @@
   height: 2px;
   background-color: var(--neon-cyan);
 }
+
+
+
+/* Authentication and Profile Photo Styles - Add to your CSS file */
+
+/* Profile image styling */
+.profile-img {
+  object-fit: cover;
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.profile-img:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  background-color: var(--dark-bg);
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.dropdown-item {
+  color: #fff;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: var(--neon-cyan);
+}
+
+.dropdown-divider {
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
